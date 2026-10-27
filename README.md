@@ -1,10 +1,12 @@
 # Sổ tay Workflow — Next.js
 
-Website tài liệu tiếng Việt cho người dùng ít quen công nghệ. Nội dung dùng chung cho nhiều doanh nghiệp, không đọc hồ sơ hoặc dữ liệu lead riêng trong repository.
+Website tài liệu tiếng Việt cho người dùng ít quen công nghệ, hướng dẫn dùng workflow [TinaCRM-Agent](https://github.com/Tinasoft-Viet-Nam/TinaCRM-Agent). Nội dung dùng chung cho nhiều doanh nghiệp, không đọc hồ sơ hoặc dữ liệu lead của workflow.
+
+Bản đang chạy: https://crm-lead-workflow.vercel.app (Vercel project `web-docs`). Mỗi lần đẩy lên nhánh `main` của repo này, Vercel tự dựng lại web.
 
 ## Chạy local
 
-Yêu cầu Node.js >= 20.9 và npm. Chạy trong thư mục `web-docs`:
+Yêu cầu Node.js >= 20.9 và npm. Chạy ở thư mục gốc của repo:
 
 ```bash
 npm install
@@ -26,4 +28,4 @@ npm start
 - Điều hướng từng bài, mục lục, chế độ sáng/tối, giao diện mobile và hỗ trợ in.
 - Tiến độ chỉ lưu trên thiết bị, không đồng bộ TinaCRM và không xác nhận công cụ đã kết nối.
 
-Sửa nội dung tại `src/lib/guides.ts`. Trang này là hướng dẫn, không phải ứng dụng điều khiển Claude, CRM hoặc gửi email. Phần cài công cụ lần đầu được trình bày như việc cần người hỗ trợ.
+Sửa nội dung tại `src/lib/guides.ts`. Số bước phải khớp `workflows/USER_GUIDE_FLOW.md` của repo workflow. Trang này là hướng dẫn, không phải ứng dụng điều khiển Claude, CRM hoặc gửi email. Phần cài công cụ lần đầu được trình bày như việc cần người hỗ trợ.
