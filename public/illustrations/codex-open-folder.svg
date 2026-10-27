@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="640" viewBox="0 0 1100 640">
+<rect width="1100" height="640" rx="18" fill="#f2f5ef"/>
+<g font-family="Arial, sans-serif" fill="#24342d">
+<text x="45" y="55" font-size="25" font-weight="700">ChatGPT desktop app → Codex → mở thư mục workflow</text>
+<text x="45" y="88" font-size="17" fill="#53655a">Sơ đồ minh họa • Không phải ảnh chụp; tên nút có thể khác chút theo phiên bản</text>
+<rect x="45" y="115" width="1010" height="490" rx="14" fill="#fff" stroke="#b8cabd" stroke-width="2"/>
+<rect x="45" y="115" width="230" height="490" rx="14" fill="#e7eee8"/>
+<rect x="263" y="115" width="12" height="490" fill="#e7eee8"/>
+<rect x="68" y="140" width="185" height="44" rx="9" fill="#fff" stroke="#b8cabd"/>
+<text x="86" y="169" font-size="18" font-weight="700">Codex</text>
+<text x="200" y="169" font-size="16" fill="#53655a">▾</text>
+<rect x="68" y="200" width="185" height="40" rx="9" fill="#24644e"/>
+<text x="86" y="226" font-size="17" font-weight="700" fill="#fff">+ New chat</text>
+<text x="86" y="280" font-size="16" fill="#53655a">Projects</text>
+<text x="86" y="312" font-size="16">Scheduled</text>
+<text x="86" y="344" font-size="16">Plugins</text>
+<text x="86" y="580" font-size="15" fill="#53655a">Settings</text>
+<text x="330" y="250" font-size="24" font-weight="700" fill="#758c7b">Bạn muốn làm gì?</text>
+<rect x="315" y="420" width="710" height="150" rx="14" fill="#fff" stroke="#758c7b" stroke-width="2"/>
+<text x="340" y="462" font-size="18" fill="#8a9a8f">Đọc AGENTS.md và tài liệu trong inputs…</text>
+<rect x="335" y="515" width="215" height="38" rx="19" fill="#e7eee8"/>
+<text x="352" y="540" font-size="15">Work in: This computer ▾</text>
+<rect x="562" y="515" width="250" height="38" rx="19" fill="#e7eee8"/>
+<text x="579" y="540" font-size="15">Thư mục: TinaCRM-…-main ▾</text>
+<rect x="824" y="515" width="180" height="38" rx="19" fill="#e7eee8"/>
+<text x="840" y="540" font-size="15">Ask for approval ▾</text>
+</g></svg>

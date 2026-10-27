@@ -5,7 +5,7 @@ import { cycle, guideHref, phases } from "@/lib/guides";
 export default function Home() {
   return <div className="simple-home">
     <h1>Chu trình sử dụng workflow</h1>
-    <p className="home-intro">Gồm 3 phần. Bước 1–3 làm trên máy, từ bước 4 gửi câu lệnh cho Claude trong tab Code.</p>
+    <p className="home-intro">Gồm 3 phần. Bước 1–3 làm trên máy, từ bước 4 gửi câu lệnh cho trợ lý AI (Claude hoặc ChatGPT/Codex) trong thư mục workflow.</p>
     {phases.map((phase, p) => <section className="start-choice phase-block" id={phase.id} key={phase.id}>
       <div className="phase-head"><span className="phase-index">Phần {p + 1}</span><h2>{phase.title}</h2><span className="phase-range">Bước {phase.from}–{phase.to}</span></div>
       <p className="phase-when">{phase.when}</p>

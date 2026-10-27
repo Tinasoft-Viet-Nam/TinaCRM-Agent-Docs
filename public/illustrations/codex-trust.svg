@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="520" viewBox="0 0 1100 520">
+<rect width="1100" height="520" rx="18" fill="#f2f5ef"/>
+<g font-family="Arial, sans-serif" fill="#24342d">
+<text x="45" y="55" font-size="25" font-weight="700">Codex hỏi có tin cậy thư mục không</text>
+<text x="45" y="88" font-size="17" fill="#53655a">Sơ đồ minh họa • Chỉ hỏi lần đầu mở thư mục; lời nhắn thật có thể khác</text>
+<rect x="220" y="125" width="660" height="250" rx="14" fill="#fff" stroke="#758c7b" stroke-width="2"/>
+<text x="250" y="172" font-size="21" font-weight="700">Tin cậy thư mục này?</text>
+<text x="250" y="210" font-size="17" fill="#53655a">TinaCRM-Agent-…-main</text>
+<text x="250" y="248" font-size="16">Thư mục có cấu hình riêng (.codex). Chỉ tin cậy thư mục bạn biết rõ.</text>
+<rect x="250" y="300" width="250" height="48" rx="10" fill="#24644e"/>
+<text x="292" y="331" font-size="18" font-weight="700" fill="#fff">Tin cậy (Trust)</text>
+<rect x="520" y="300" width="200" height="48" rx="10" fill="#fff" stroke="#b8cabd"/>
+<text x="560" y="331" font-size="18">Không tin cậy</text>
+<rect x="45" y="405" width="1010" height="85" rx="12" fill="#fff" stroke="#b8cabd"/>
+<text x="68" y="440" font-size="18">Chọn Tin cậy: Codex nạp quy tắc có sẵn của workflow, cho phép đúng các lệnh ghi TinaCRM, cập nhật workflow</text>
+<text x="68" y="470" font-size="18">và hộp thoại nhập khóa chạy mà không hỏi lại, nạp cấu hình trình duyệt. Không tin cậy thì lịch bị chặn.</text>
+</g></svg>

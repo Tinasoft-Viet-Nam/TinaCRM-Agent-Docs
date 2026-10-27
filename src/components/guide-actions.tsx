@@ -6,7 +6,7 @@ import { CheckIcon, CopyIcon } from "@radix-ui/react-icons";
 export function CopyPrompt({ text, command = false }: { text: string; command?: boolean }) {
   const [status, setStatus] = useState<"idle" | "copied" | "error">("idle");
   const copy = async () => { try { await navigator.clipboard.writeText(text); setStatus("copied"); } catch { setStatus("error"); } };
-  return <div className="prompt-box"><div className="prompt-heading"><span>{command ? "Lệnh" : "Gửi Claude"}</span><button onClick={copy}>{status === "copied" ? <CheckIcon /> : <CopyIcon />}{status === "copied" ? "Đã sao chép" : "Sao chép"}</button></div>{command ? <pre style={{ whiteSpace: "pre-wrap", overflowWrap: "anywhere", fontSize: 12 }}>{text}</pre> : <p>{text}</p>}{status === "error" && <small aria-live="polite">Không sao chép được, hãy chọn và sao chép thủ công.</small>}</div>;
+  return <div className="prompt-box"><div className="prompt-heading"><span>{command ? "Lệnh" : "Gửi trợ lý"}</span><button onClick={copy}>{status === "copied" ? <CheckIcon /> : <CopyIcon />}{status === "copied" ? "Đã sao chép" : "Sao chép"}</button></div>{command ? <pre style={{ whiteSpace: "pre-wrap", overflowWrap: "anywhere", fontSize: 12 }}>{text}</pre> : <p>{text}</p>}{status === "error" && <small aria-live="polite">Không sao chép được, hãy chọn và sao chép thủ công.</small>}</div>;
 }
 
 export function Checklist({ items, storageKey }: { items: string[]; storageKey: string }) {

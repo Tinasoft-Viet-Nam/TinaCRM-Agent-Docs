@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="560" viewBox="0 0 1100 560">
+<rect width="1100" height="560" rx="18" fill="#f2f5ef"/>
+<g font-family="Arial, sans-serif" fill="#24342d">
+<text x="45" y="55" font-size="25" font-weight="700">Chọn quyền của Codex (ngay dưới ô nhập)</text>
+<text x="45" y="88" font-size="17" fill="#53655a">Sơ đồ minh họa • Không phải ảnh chụp</text>
+<rect x="45" y="120" width="560" height="300" rx="14" fill="#fff" stroke="#758c7b" stroke-width="2"/>
+<rect x="65" y="140" width="520" height="80" rx="10" fill="#e3efe6" stroke="#24644e" stroke-width="2"/>
+<text x="88" y="174" font-size="19" font-weight="700">✓ Ask for approval</text>
+<text x="88" y="202" font-size="16" fill="#53655a">Hỏi bạn trước khi làm việc ngoài thư mục</text>
+<rect x="65" y="230" width="520" height="80" rx="10" fill="#fff"/>
+<text x="88" y="264" font-size="19" font-weight="700">Approve for me</text>
+<text x="88" y="292" font-size="16" fill="#53655a">ChatGPT tự xét các yêu cầu đó</text>
+<rect x="65" y="320" width="520" height="80" rx="10" fill="#fff6e5" stroke="#e0c48a"/>
+<text x="88" y="354" font-size="19" font-weight="700">Full access</text>
+<text x="88" y="382" font-size="16" fill="#53655a">Làm mọi việc trên máy, không hỏi</text>
+<rect x="45" y="440" width="235" height="42" rx="21" fill="#e7eee8" stroke="#758c7b"/>
+<text x="68" y="467" font-size="16">Ask for approval ▴</text>
+<text x="660" y="180" font-size="19" font-weight="700" fill="#24644e">Nên chọn khi mới dùng</text>
+<path d="M600 180H650" stroke="#24644e" stroke-width="3"/>
+<text x="660" y="270" font-size="19" font-weight="700">Dùng được khi đã quen</text>
+<path d="M600 270H650" stroke="#758c7b" stroke-width="3"/>
+<text x="660" y="360" font-size="19" font-weight="700" fill="#9a6a12">Không dùng cho workflow</text>
+<path d="M600 360H650" stroke="#e0c48a" stroke-width="3"/>
+<rect x="320" y="500" width="735" height="40" rx="10" fill="#fff" stroke="#b8cabd"/>
+<text x="340" y="526" font-size="16">Codex hỏi quyền cho lệnh scripts/… của workflow: chọn cho phép luôn với lệnh đó.</text>
+</g></svg>
