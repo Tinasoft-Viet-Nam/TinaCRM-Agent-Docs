@@ -5,7 +5,6 @@
 
 - `github-download.png`: ảnh chụp trang kho GitHub Tinasoft-Viet-Nam/TinaCRM-Agent (menu Code mở), chụp 2026-10-26 bằng Playwright ở giao diện tối; `github-download-light.png` là bản giao diện sáng cùng khung. Đã làm mờ avatar và tên tài khoản, không phải giao diện Claude.
 - `folder-map.svg`, `copy-files.svg`, `unzip.svg`, `email-flow.svg`: sơ đồ thao tác/nghiệp vụ, không phải screenshot hệ điều hành hay ứng dụng.
-- `code-local.svg`: sơ đồ thao tác Code → Local → Select folder, đối chiếu tài liệu https://code.claude.com/docs/en/desktop-quickstart. Không phải ảnh chụp Claude Code.
 - Các ảnh Chat Projects/Add to project hoặc trang download không được dùng làm hình đối chiếu giao diện Code.
 
 - `claude-code-folder-chosen-full.png`: toàn bộ cửa sổ Claude Desktop (Mac) tab Code sau khi chọn thư mục TinaCRM-Agent-main (giải nén từ ZIP repo Tinasoft-Viet-Nam/TinaCRM-Agent), quyền Manual, chụp 2026-10-26. Đã xóa tên tài khoản góc dưới trái.
