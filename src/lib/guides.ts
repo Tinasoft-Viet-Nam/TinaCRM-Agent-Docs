@@ -7,6 +7,7 @@ export type Section = {
   prompt?: string;
   checks?: string[];
   faqs?: { question: string; answer: string }[];
+  link?: { label: string; href: string };
 };
 
 export type Guide = {
@@ -72,9 +73,9 @@ export const cycle: Guide[] = [
     description: "Kết nối CloakBrowser (trình duyệt), TinaCRM (bằng API key) và các dịch vụ sẽ dùng như Gmail, Google Calendar, Apollo.",
     sections: [
       { id: "browser", title: "CloakBrowser", paragraphs: ["Trợ lý tự thêm cấu hình trình duyệt cho phần mềm bạn dùng, rồi nhờ bạn mở phiên mới cùng thư mục và gửi “Tiếp tục từ lần trước”. Phiên mới hỏi có dùng máy chủ trình duyệt không thì bấm cho phép."], prompt: "Kết nối CloakBrowser và mở thử một trang web công khai." },
-      { id: "apikey-open", title: "TinaCRM: tạo API key", paragraphs: ["Đăng nhập TinaCRM của doanh nghiệp → Settings → MCP & APIs → tab API → Create API key."] },
+      { id: "apikey-open", title: "TinaCRM: tạo API key", paragraphs: ["Mở app.tinacrm.com, đăng nhập và vào workspace của doanh nghiệp → Settings → MCP & APIs → tab API → Create API key."], link: { label: "Mở TinaCRM (app.tinacrm.com)", href: "https://app.tinacrm.com" } },
       { id: "apikey-form", title: "Điền thông tin khóa", paragraphs: ["Role quyết định trợ lý được làm gì trong CRM: chọn role đủ quyền với khách hàng, công ty và công việc. Nên đặt ngày hết hạn thay vì Never."] },
-      { id: "apikey-copy", title: "Sao chép khóa", paragraphs: ["Khóa chỉ hiện một lần. Bấm Copy rồi gửi câu lệnh dưới đây. Không dán khóa vào khung chat."], prompt: "Kết nối TinaCRM bằng API key. Hỏi tôi địa chỉ TinaCRM, bật hộp thoại để tôi dán API key, sau đó đọc thử dữ liệu khách hàng, chưa ghi gì." },
+      { id: "apikey-copy", title: "Sao chép khóa", paragraphs: ["Khóa chỉ hiện một lần. Bấm Copy rồi gửi câu lệnh dưới đây. Không dán khóa vào khung chat."], prompt: "Kết nối TinaCRM tại https://app.tinacrm.com bằng API key. Bật hộp thoại để tôi dán API key, sau đó đọc thử dữ liệu khách hàng, chưa ghi gì." },
       { id: "apikey-paste", title: "Dán khóa vào hộp thoại", paragraphs: ["Trợ lý bật hộp thoại Kết nối TinaCRM: dán khóa vào ô, bấm Lưu. Không thấy hộp thoại thì tìm trên thanh Dock (Mac) hoặc thanh tác vụ (Windows), hoặc phía sau cửa sổ trợ lý AI."] },
       { id: "mcp-check", title: "Kiểm tra kết nối", paragraphs: ["Trợ lý kiểm tra khóa và đọc thử vài khách hàng, công ty để bạn xác nhận đúng CRM của doanh nghiệp. Không cần mở phiên mới."] },
       { id: "connectors", title: "Dịch vụ khác", paragraphs: ["Trợ lý đề xuất dịch vụ doanh nghiệp sẽ cần: Gmail hoặc Outlook để gửi email, Google Calendar để đặt lịch hẹn, Apollo để tìm khách. Trợ lý đọc thử để kiểm tra, chưa gửi gì.", "Claude hiện thẻ như ảnh trong khung chat: bấm Connect, đăng nhập nếu được hỏi là xong. Phần mềm AI khác thì làm theo hướng dẫn trợ lý đưa ra."], prompt: "Đề xuất các dịch vụ cần kết nối cho doanh nghiệp này và hướng dẫn tôi kết nối từng cái." },

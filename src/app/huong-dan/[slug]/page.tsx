@@ -32,6 +32,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
     {guide.sections.map((section) => <section className="article-section" id={section.id} key={section.id}>
       <h2>{section.title}</h2>
       {section.paragraphs?.map((p) => <p key={p}>{p}</p>)}
+      {section.link && <p><a className="button button-primary" href={section.link.href} target="_blank" rel="noreferrer">{section.link.label} <ExternalLinkIcon /></a></p>}
       {section.steps && <ol className="steps">{section.steps.map((s, n) => <li key={s.title}><span className="step-number">{n + 1}</span><div><h3>{s.title}</h3><p>{s.body}</p></div></li>)}</ol>}
       {(visuals[`${guide.slug}:${section.id}`] || []).map((visual) => <GuideVisual key={visual.src} visual={visual} />)}
       {section.prompt && <CopyPrompt text={section.prompt} />}
