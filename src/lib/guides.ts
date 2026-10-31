@@ -32,7 +32,7 @@ export const cycle: Guide[] = [
       { id: "where", title: "Thư mục", steps: [
         { title: "inputs/01_company_info", body: "Hồ sơ công ty, hồ sơ năng lực, dự án, case study." },
         { title: "inputs/02_marketing_materials", body: "Brochure, mô tả sản phẩm/dịch vụ, bảng giá." }
-      ], paragraphs: ["Ưu tiên PDF, Word, Excel có chữ. Ảnh scan có thể không đọc được."] }
+      ], paragraphs: ["Ưu tiên PDF, Word, Excel có chữ. Ảnh scan có thể không đọc được.", "Chưa có tài liệu cũng được: để trống inputs, ở bước “Trợ lý đọc tài liệu” bạn gửi link website doanh nghiệp cho trợ lý (hoặc trợ lý hỏi bạn từng câu)."] }
     ]
   },
   {
@@ -54,9 +54,10 @@ export const cycle: Guide[] = [
   },
   {
     slug: "doc-tai-lieu", title: "Trợ lý đọc tài liệu", shortTitle: "Trợ lý đọc tài liệu", actor: "Bạn yêu cầu trợ lý",
-    description: "Trợ lý tóm tắt doanh nghiệp từ inputs và hỏi phần còn thiếu. Bạn xác nhận và chọn sản phẩm ưu tiên.",
+    description: "Trợ lý tóm tắt doanh nghiệp từ inputs (hoặc từ website nếu chưa có tài liệu) và hỏi phần còn thiếu. Bạn xác nhận và chọn sản phẩm ưu tiên.",
     sections: [
-      { id: "send", title: "Câu lệnh", prompt: "Đọc AGENTS.md và tài liệu trong inputs. Báo tệp nào không đọc được, tóm tắt doanh nghiệp và hỏi tôi phần còn thiếu." }
+      { id: "send", title: "Câu lệnh", prompt: "Đọc AGENTS.md và tài liệu trong inputs. Báo tệp nào không đọc được, tóm tắt doanh nghiệp và hỏi tôi phần còn thiếu." },
+      { id: "website", title: "Chưa có tài liệu? Gửi website doanh nghiệp", paragraphs: ["Nếu thư mục inputs đang trống, bạn chỉ cần gửi đường link trang web của doanh nghiệp. Trợ lý đọc website để tóm tắt doanh nghiệp, sản phẩm/dịch vụ, rồi hỏi bạn phần website chưa có (ví dụ bảng giá, khách hàng tiêu biểu). Không có website thì trợ lý sẽ hỏi bạn từng câu."], prompt: "Đọc AGENTS.md. Tôi chưa có tài liệu, đây là website doanh nghiệp của tôi: <dán link website>. Đọc website, tóm tắt doanh nghiệp và hỏi tôi phần còn thiếu." }
     ]
   },
   {
