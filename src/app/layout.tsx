@@ -8,7 +8,7 @@ import "./readability.css";
 const font = Be_Vietnam_Pro({ subsets: ["latin", "vietnamese"], weight: ["400", "500", "600", "700"], variable: "--font-guide", display: "swap" });
 export const metadata: Metadata = {
   title: { default: "Sổ tay Workflow — Tìm khách cùng trợ lý AI", template: "%s | Sổ tay Workflow" },
-  description: "Hướng dẫn từng bước dùng trợ lý AI (Claude hoặc ChatGPT/Codex) để tìm khách hàng, kết nối TinaCRM và chăm sóc khách bằng email. Dành cho người mới bắt đầu.",
+  description: "Hướng dẫn từng bước dùng trợ lý AI cài trên máy (ví dụ Claude Desktop) để tìm khách hàng, kết nối TinaCRM và chăm sóc khách bằng email. Dành cho người mới bắt đầu.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
