@@ -72,13 +72,13 @@ export const cycle: Guide[] = [
     slug: "ket-noi-mcp", title: "Trợ lý kết nối công cụ", shortTitle: "Trợ lý kết nối công cụ", actor: "Bạn yêu cầu trợ lý",
     description: "Kết nối CloakBrowser (trình duyệt), TinaCRM (bằng API key) và các dịch vụ sẽ dùng như Gmail, Google Calendar, Apollo.",
     sections: [
-      { id: "browser", title: "CloakBrowser", paragraphs: ["Trợ lý tự thêm cấu hình trình duyệt cho phần mềm bạn dùng, rồi nhờ bạn mở phiên mới cùng thư mục và gửi “Tiếp tục từ lần trước”. Phiên mới hỏi có dùng máy chủ trình duyệt không thì bấm cho phép."], prompt: "Kết nối CloakBrowser và mở thử một trang web công khai." },
+      { id: "browser", title: "CloakBrowser", paragraphs: ["Trợ lý tự cài trình duyệt và mở thử một trang ngay trong cuộc trò chuyện này, không cần mở cuộc trò chuyện mới. Một cửa sổ trình duyệt sẽ hiện lên; khi trợ lý hỏi quyền chạy lệnh thì bấm cho phép luôn."], prompt: "Kết nối CloakBrowser và mở thử một trang web công khai." },
       { id: "apikey-open", title: "TinaCRM: tạo API key", paragraphs: ["Mở app.tinacrm.com, đăng nhập và vào workspace của doanh nghiệp → Settings → MCP & APIs → tab API → Create API key."], link: { label: "Mở TinaCRM (app.tinacrm.com)", href: "https://app.tinacrm.com" } },
       { id: "apikey-form", title: "Điền thông tin khóa", paragraphs: ["Role quyết định trợ lý được làm gì trong CRM: chọn role đủ quyền với khách hàng, công ty và công việc. Nên đặt ngày hết hạn thay vì Never."] },
       { id: "apikey-copy", title: "Sao chép khóa", paragraphs: ["Khóa chỉ hiện một lần. Bấm Copy rồi gửi câu lệnh dưới đây. Không dán khóa vào khung chat."], prompt: "Kết nối TinaCRM tại https://app.tinacrm.com bằng API key. Bật hộp thoại để tôi dán API key, sau đó đọc thử dữ liệu khách hàng, chưa ghi gì." },
       { id: "apikey-paste", title: "Dán khóa vào hộp thoại", paragraphs: ["Trợ lý bật hộp thoại Kết nối TinaCRM: dán khóa vào ô, bấm Lưu. Không thấy hộp thoại thì tìm trên thanh Dock (Mac) hoặc thanh tác vụ (Windows), hoặc phía sau cửa sổ trợ lý AI."] },
       { id: "mcp-check", title: "Kiểm tra kết nối", paragraphs: ["Trợ lý kiểm tra khóa và đọc thử vài khách hàng, công ty để bạn xác nhận đúng CRM của doanh nghiệp. Không cần mở phiên mới."] },
-      { id: "connectors", title: "Dịch vụ khác", paragraphs: ["Trợ lý đề xuất dịch vụ doanh nghiệp sẽ cần: Gmail hoặc Outlook để gửi email, Google Calendar để đặt lịch hẹn, Apollo để tìm khách. Trợ lý đọc thử để kiểm tra, chưa gửi gì.", "Claude hiện thẻ như ảnh trong khung chat: bấm Connect, đăng nhập nếu được hỏi là xong. Phần mềm AI khác thì làm theo hướng dẫn trợ lý đưa ra."], prompt: "Đề xuất các dịch vụ cần kết nối cho doanh nghiệp này và hướng dẫn tôi kết nối từng cái." },
+      { id: "connectors", title: "Dịch vụ khác", paragraphs: ["Trợ lý đề xuất dịch vụ doanh nghiệp sẽ cần: Gmail hoặc Outlook để gửi email, Google Calendar để đặt lịch hẹn, Apollo để tìm khách. Trợ lý đọc thử để kiểm tra, chưa gửi gì.", "Claude hiện thẻ như ảnh trong khung chat: bấm Connect, đăng nhập nếu được hỏi là xong. Phần mềm AI khác thì làm theo hướng dẫn trợ lý đưa ra.", "Kết nối xong thì tiếp tục ngay trong cuộc trò chuyện này. Đừng mở cuộc trò chuyện mới: cuộc trò chuyện mới không có các kết nối vừa làm và không nhớ những gì bạn đã trao đổi."], prompt: "Đề xuất các dịch vụ cần kết nối cho doanh nghiệp này và hướng dẫn tôi kết nối từng cái." },
     ]
   },
   {
@@ -112,11 +112,11 @@ export const cycle: Guide[] = [
     description: "Sau lần thiết lập đầu, mỗi ngày chỉ cần bước này.",
     sections: [
       { id: "routine", title: "Câu lệnh", prompt: "Tiếp tục chiến dịch <tên chiến dịch>: kiểm tra phản hồi mới, tìm khách theo mục tiêu ngày và gửi email đến hạn." },
-      { id: "parallel", title: "Chạy song song", steps: [
-        { title: "Mở phiên mới", body: "Bấm + New (cuộc trò chuyện mới), chạy trên máy này. Mỗi phiên làm một chiến dịch hoặc một doanh nghiệp." },
-        { title: "Chọn thư mục", body: "Cùng doanh nghiệp: chọn cùng thư mục. Doanh nghiệp khác: chọn thư mục của doanh nghiệp đó." },
-        { title: "Gửi câu lệnh", body: "Gửi câu lệnh trên với tên chiến dịch của phiên đó." }
-      ], note: { title: "Lưu ý", body: "Không đăng nhập cùng một tài khoản mạng xã hội ở hai chiến dịch chạy cùng lúc. Mỗi phiên tốn lượt dùng riêng của tài khoản trợ lý AI." } },
+      { id: "parallel", title: "Làm tiếp và đổi chiến dịch", steps: [
+        { title: "Mở lại đúng cuộc trò chuyện cũ", body: "Bấm vào cuộc trò chuyện đã dùng để thiết lập, trong danh sách ở thanh bên trái. Đừng bấm + New." },
+        { title: "Gửi câu lệnh", body: "Gửi câu lệnh trên với tên chiến dịch muốn làm, hoặc “Tiếp tục từ lần trước”." },
+        { title: "Đổi chiến dịch", body: "Làm xong chiến dịch này, nhắn ngay trong cuộc trò chuyện đó: “Làm chiến dịch <tên khác>”. Các chiến dịch làm lần lượt." }
+      ], note: { title: "Vì sao không mở cuộc trò chuyện mới?", body: "Các kết nối (Gmail, Calendar…) và những gì bạn đã trao đổi với trợ lý chỉ nằm trong cuộc trò chuyện cũ. Cuộc trò chuyện mới không có kết nối và phải làm lại từ đầu." } },
       { id: "schedule", title: "Chạy tự động theo lịch", paragraphs: ["Sau khi chạy tay ổn, nhờ trợ lý đặt lịch. Trợ lý hỏi giờ chạy và có cần bạn duyệt email trước khi gửi, rồi tự tạo lịch. Bạn không cần mở trang Scheduled. Mỗi lần chạy hiện ở mục Scheduled ở thanh bên trái.", "Lịch chỉ chạy khi máy bật, không ngủ và ứng dụng đang mở. Đổi giờ hoặc tạm dừng: nhắn trợ lý.", "Lần đầu lịch chạy, nếu trợ lý hỏi quyền thì mở phiên đó trong Scheduled và bấm Always allow cho việc đúng như mô tả.", "Chỉ đặt lịch ở một phần mềm AI, tránh gửi email hai lần."], prompt: "Đặt lịch chạy tự động hằng ngày cho chiến dịch <tên chiến dịch>." },
       { id: "outputs", title: "Kết quả", paragraphs: ["Mỗi chiến dịch: campaigns/<tên chiến dịch>/outputs. Báo cáo tuần: outputs/04_weekly_reports."] },
       { id: "auto-update", title: "Tự cập nhật", paragraphs: ["Mỗi lần chạy, trợ lý kiểm tra bản mới của workflow trước. Có bản mới thì cập nhật, đọc lại hướng dẫn rồi mới làm việc. Tóm tắt cuối phiên ghi rõ đã cập nhật hay chưa."] }
@@ -136,15 +136,16 @@ export const help: Guide = {
   description: "Các vướng mắc hay gặp.",
   sections: [
     { id: "faq", title: "Câu hỏi", faqs: [
-      { question: "Làm tiếp ở phiên sau?", answer: "Mở lại thư mục workflow bằng phần mềm trợ lý AI (Claude Desktop: tab Code) và gửi “Tiếp tục chiến dịch <tên>” hoặc “Tiếp tục từ lần trước”." },
+      { question: "Hôm sau làm tiếp thế nào?", answer: "Mở Claude Desktop (tab Code), bấm vào đúng cuộc trò chuyện cũ trong danh sách ở thanh bên trái, rồi gửi “Tiếp tục chiến dịch <tên>” hoặc “Tiếp tục từ lần trước”. Đừng bấm + New: cuộc trò chuyện mới không có các kết nối đã làm và không nhớ ngữ cảnh." },
+      { question: "Lỡ mở cuộc trò chuyện mới rồi?", answer: "Quay lại cuộc trò chuyện cũ ở thanh bên trái và làm tiếp ở đó. Nếu không tìm thấy, gửi “Tiếp tục từ lần trước” trong cuộc trò chuyện mới: trợ lý đọc lại tiến trình đã lưu trong thư mục, nhưng sẽ phải nhờ bạn kết nối lại các dịch vụ (Gmail, Calendar…)." },
       { question: "Trợ lý báo đã lưu nhưng TinaCRM không có?", answer: "Yêu cầu trợ lý kiểm tra lại bằng công cụ và báo ID bản ghi." },
       { question: "CloakBrowser không mở?", answer: "Làm lại bước 6." },
       { question: "Lịch chạy không hoạt động?", answer: "Lịch chỉ chạy khi máy bật, không ngủ và phần mềm trợ lý AI đang mở. Máy ngủ qua giờ chạy thì lần chạy bị bỏ lỡ được chạy bù khi mở lại. Mở mục Scheduled ở thanh bên trái xem lần chạy gần nhất: nếu đang chờ hỏi quyền, mở ra và cho phép luôn đúng việc như mô tả." },
       { question: "Đổi giờ, tạm dừng hoặc xem lịch?", answer: "Nhắn trợ lý, ví dụ “Xem các lịch đang chạy”, “Tạm dừng lịch chiến dịch <tên>”, “Đổi giờ chạy chiến dịch <tên> sang 9:00”." },
-      { question: "Dùng cho doanh nghiệp khác?", answer: "Tải một bản workflow riêng và làm lại từ bước 1. Chạy song song: xem bước 10." },
+      { question: "Dùng cho doanh nghiệp khác?", answer: "Tải một bản workflow riêng và làm lại từ bước 1, trong một cuộc trò chuyện riêng cho thư mục đó. Sau này làm việc cho doanh nghiệp nào thì mở lại đúng cuộc trò chuyện của doanh nghiệp đó ở thanh bên trái." },
       { question: "Khách xuất hiện ở hai chiến dịch?", answer: "Trợ lý giữ khách ở chiến dịch đầu tiên và báo “đã thuộc chiến dịch X”." },
       { question: "Dùng bản web của Claude hoặc ChatGPT được không?", answer: "Không. Bản web không mở được thư mục và không chạy được lệnh trên máy. Cần phần mềm cài trên máy, ví dụ Claude Desktop (tab Code) hoặc ChatGPT desktop app." },
-      { question: "Đổi sang phần mềm AI khác?", answer: "Mở cùng thư mục workflow bằng công cụ mới theo bước 3, rồi nhắn “Tôi chuyển sang dùng công cụ này, tiếp tục từ lần trước”. Tài liệu, chiến dịch, khóa TinaCRM vẫn giữ nguyên; trợ lý kết nối lại trình duyệt và các dịch vụ (Gmail…) cho công cụ mới. Nếu đã đặt lịch, nhờ trợ lý ở công cụ cũ tạm dừng lịch trước, rồi đặt lại ở công cụ mới. Không chạy cùng lúc ở hai công cụ." },
+      { question: "Đổi sang phần mềm AI khác?", answer: "Mở cùng thư mục workflow bằng công cụ mới theo bước 3, rồi nhắn “Tôi chuyển sang dùng công cụ này, tiếp tục từ lần trước”. Tài liệu, chiến dịch, khóa TinaCRM vẫn giữ nguyên; trợ lý kết nối lại các dịch vụ (Gmail…) cho công cụ mới, rồi từ đó làm mọi việc trong cuộc trò chuyện này. Nếu đã đặt lịch, nhờ trợ lý ở công cụ cũ tạm dừng lịch trước, rồi đặt lại ở công cụ mới. Không chạy cùng lúc ở hai công cụ." },
       { question: "Trợ lý báo lỗi mạng hoặc hỏi quyền mỗi lần chạy?", answer: "Khi trợ lý hỏi quyền chạy lệnh scripts/… của workflow, chọn cho phép luôn (không phải chỉ một lần). Lỗi mạng kiểu này không có nghĩa là khóa TinaCRM bị sai." }
     ] },
     { id: "update", title: "Cập nhật workflow", paragraphs: ["Không cần tải lại ZIP. Mở thư mục workflow bằng trợ lý và gửi câu dưới. Tài liệu, chiến dịch, cấu hình và khóa được giữ nguyên. Lần chạy hằng ngày trợ lý tự cập nhật trước khi làm việc."], prompt: "Cập nhật workflow lên bản mới nhất." },
