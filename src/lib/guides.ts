@@ -63,16 +63,16 @@ export const cycle: Guide[] = [
   },
   {
     slug: "kiem-tra-moi-truong", title: "Trợ lý kiểm tra môi trường", shortTitle: "Trợ lý kiểm tra môi trường", actor: "Bạn yêu cầu trợ lý",
-    description: "Trợ lý kiểm tra máy và cài phần còn thiếu, gồm trình duyệt CloakBrowser.",
+    description: "Trợ lý kiểm tra máy và báo phần còn thiếu. Không cần cài trình duyệt riêng.",
     sections: [
-      { id: "send", title: "Câu lệnh", prompt: "Kiểm tra môi trường cho workflow này, báo phần còn thiếu và cài CloakBrowser theo workflows/CLOAKBROWSER.md." }
+      { id: "send", title: "Câu lệnh", prompt: "Kiểm tra môi trường cho workflow này, báo phần còn thiếu và cài nếu cần." }
     ]
   },
   {
     slug: "ket-noi-mcp", title: "Trợ lý kết nối công cụ", shortTitle: "Trợ lý kết nối công cụ", actor: "Bạn yêu cầu trợ lý",
-    description: "Kết nối CloakBrowser (trình duyệt), TinaCRM (bằng API key) và các dịch vụ sẽ dùng như Gmail, Google Calendar, Apollo.",
+    description: "Kiểm tra đọc web, kết nối TinaCRM (bằng API key) và các dịch vụ sẽ dùng như Gmail, Google Calendar, Apollo.",
     sections: [
-      { id: "browser", title: "CloakBrowser", paragraphs: ["Trợ lý tự cài trình duyệt và mở thử một trang ngay trong cuộc trò chuyện này, không cần mở cuộc trò chuyện mới. Một cửa sổ trình duyệt sẽ hiện lên; khi trợ lý hỏi quyền chạy lệnh thì bấm cho phép luôn."], prompt: "Kết nối CloakBrowser và mở thử một trang web công khai." },
+      { id: "browser", title: "Đọc web", paragraphs: ["Trợ lý dùng công cụ đọc web có sẵn, không cần cài trình duyệt riêng. Trợ lý đọc thử website của doanh nghiệp bạn ngay trong cuộc trò chuyện này. Khi được hỏi quyền đọc web hoặc chạy lệnh, bấm cho phép luôn.", "Khi tìm khách, cách nào không lấy được dữ liệu thì trợ lý tự chuyển sang cách khác."], prompt: "Đọc thử website của doanh nghiệp tôi để kiểm tra trợ lý đọc được web." },
       { id: "apikey-open", title: "TinaCRM: tạo API key", paragraphs: ["Mở app.tinacrm.com, đăng nhập và vào workspace của doanh nghiệp → Settings → MCP & APIs → tab API → Create API key."], link: { label: "Mở TinaCRM (app.tinacrm.com)", href: "https://app.tinacrm.com" } },
       { id: "apikey-form", title: "Điền thông tin khóa", paragraphs: ["Role quyết định trợ lý được làm gì trong CRM: chọn role đủ quyền với khách hàng, công ty và công việc. Nên đặt ngày hết hạn thay vì Never."] },
       { id: "apikey-copy", title: "Sao chép khóa", paragraphs: ["Khóa chỉ hiện một lần. Bấm Copy rồi gửi câu lệnh dưới đây. Không dán khóa vào khung chat."], prompt: "Kết nối TinaCRM tại https://app.tinacrm.com bằng API key. Bật hộp thoại để tôi dán API key, sau đó đọc thử dữ liệu khách hàng, chưa ghi gì." },
@@ -91,7 +91,7 @@ export const cycle: Guide[] = [
   },
   {
     slug: "tim-khach", title: "Tìm khách và lưu vào TinaCRM", shortTitle: "Tìm khách & lưu CRM", actor: "Bạn yêu cầu trợ lý",
-    description: "Bắt đầu bằng danh sách nhỏ. Nếu nguồn cần đăng nhập, bạn tự đăng nhập trong cửa sổ CloakBrowser.",
+    description: "Bắt đầu bằng danh sách nhỏ. Trợ lý tự chọn cách lấy dữ liệu; nguồn nào cần đăng nhập thì bạn tự đăng nhập, hoặc tự xuất danh sách (Excel/CSV) vào thư mục inputs.",
     sections: [
       { id: "source", title: "Chọn nguồn", paragraphs: ["Trợ lý đề xuất 2–3 nguồn hợp với nhóm khách của chiến dịch (ví dụ Google Maps, danh bạ doanh nghiệp, LinkedIn) kèm lý do. Bạn chọn số."], prompt: "Đề xuất nguồn tìm khách phù hợp nhất cho chiến dịch này." },
       { id: "find", title: "Tìm danh sách", prompt: "Tìm 10 khách theo ICP của chiến dịch, kèm lý do phù hợp và nguồn." },
@@ -139,7 +139,8 @@ export const help: Guide = {
       { question: "Hôm sau làm tiếp thế nào?", answer: "Mở Claude Desktop (tab Code), bấm vào đúng cuộc trò chuyện cũ trong danh sách ở thanh bên trái, rồi gửi “Tiếp tục chiến dịch <tên>” hoặc “Tiếp tục từ lần trước”. Đừng bấm + New: cuộc trò chuyện mới không có các kết nối đã làm và không nhớ ngữ cảnh." },
       { question: "Lỡ mở cuộc trò chuyện mới rồi?", answer: "Quay lại cuộc trò chuyện cũ ở thanh bên trái và làm tiếp ở đó. Nếu không tìm thấy, gửi “Tiếp tục từ lần trước” trong cuộc trò chuyện mới: trợ lý đọc lại tiến trình đã lưu trong thư mục, nhưng sẽ phải nhờ bạn kết nối lại các dịch vụ (Gmail, Calendar…)." },
       { question: "Trợ lý báo đã lưu nhưng TinaCRM không có?", answer: "Yêu cầu trợ lý kiểm tra lại bằng công cụ và báo ID bản ghi." },
-      { question: "CloakBrowser không mở?", answer: "Làm lại bước 6." },
+      { question: "Trợ lý không lấy được dữ liệu từ một trang web?", answer: "Bình thường: nhiều trang chặn đọc tự động hoặc cần đăng nhập. Trợ lý tự chuyển sang cách khác (nguồn dữ liệu doanh nghiệp, Apollo…). Nếu vẫn không được, bạn tự xuất danh sách ra Excel/CSV, bỏ vào thư mục inputs rồi nhắn trợ lý đọc tệp đó." },
+      { question: "Bản cũ có CloakBrowser?", answer: "Workflow đã bỏ CloakBrowser. Nhắn “Cập nhật workflow”, trợ lý tự gỡ cấu hình cũ và hỏi bạn trước khi xóa thư mục trình duyệt cũ." },
       { question: "Lịch chạy không hoạt động?", answer: "Lịch chỉ chạy khi máy bật, không ngủ và phần mềm trợ lý AI đang mở. Máy ngủ qua giờ chạy thì lần chạy bị bỏ lỡ được chạy bù khi mở lại. Mở mục Scheduled ở thanh bên trái xem lần chạy gần nhất: nếu đang chờ hỏi quyền, mở ra và cho phép luôn đúng việc như mô tả." },
       { question: "Đổi giờ, tạm dừng hoặc xem lịch?", answer: "Nhắn trợ lý, ví dụ “Xem các lịch đang chạy”, “Tạm dừng lịch chiến dịch <tên>”, “Đổi giờ chạy chiến dịch <tên> sang 9:00”." },
       { question: "Dùng cho doanh nghiệp khác?", answer: "Tải một bản workflow riêng và làm lại từ bước 1, trong một cuộc trò chuyện riêng cho thư mục đó. Sau này làm việc cho doanh nghiệp nào thì mở lại đúng cuộc trò chuyện của doanh nghiệp đó ở thanh bên trái." },
