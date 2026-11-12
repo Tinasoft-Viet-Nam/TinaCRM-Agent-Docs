@@ -14,6 +14,6 @@ export default function Home() {
       </ol>
       {p === 0 && <Link className="button button-primary" href={guideHref(cycle[0].slug)}>Bắt đầu bước 1 <ArrowRightIcon /></Link>}
     </section>)}
-    <p className="home-help"><Link href={guideHref("tro-giup")}>Câu hỏi thường gặp</Link></p>
+    <p className="home-help"><Link href={guideHref("trang-quan-tri")}>Việc phụ: đăng bài lên website</Link> · <Link href={guideHref("tro-giup")}>Câu hỏi thường gặp</Link></p>
   </div>;
 }

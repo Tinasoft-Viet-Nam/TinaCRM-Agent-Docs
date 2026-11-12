@@ -20,7 +20,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
   const phase = phaseOf(step);
   const nextPhase = next && phaseOf(step + 1) !== phase ? phaseOf(step + 1) : undefined;
   return <div className="article-layout"><article className="article">
-    <div className="breadcrumb"><Link href="/">Chu trình</Link><span>/</span>{phase && <><Link href={`/#${phase.id}`}>{phase.title}</Link><span>/</span></>}{step > 0 ? `Bước ${step} / ${cycle.length}` : "Trợ giúp"}</div>
+    <div className="breadcrumb"><Link href="/">Chu trình</Link><span>/</span>{phase && <><Link href={`/#${phase.id}`}>{phase.title}</Link><span>/</span></>}{step > 0 ? `Bước ${step} / ${cycle.length}` : slug === "tro-giup" ? "Trợ giúp" : "Việc phụ"}</div>
     <header className="article-header">
       {step > 0 && <div className="cycle-progress" aria-hidden="true">{cycle.map((g, i) => <Link key={g.slug} href={guideHref(g.slug)} className={i + 1 < step ? "done" : i + 1 === step ? "current" : ""} title={`Bước ${i + 1}: ${g.shortTitle}`} />)}</div>}
       {phase && <span className="phase-tag">{phase.title} · {phase.when}</span>}

@@ -131,6 +131,25 @@ export const cycle: Guide[] = [
   }
 ];
 
+export const adminSite: Guide = {
+  slug: "trang-quan-tri", title: "Làm việc trên trang quản trị nội bộ", shortTitle: "Đăng bài lên website", actor: "Bạn yêu cầu trợ lý",
+  description: "Việc phụ, làm lúc nào cũng được sau bước 4: trợ lý viết bài chuẩn SEO và đăng lên trang quản trị website của doanh nghiệp, hoặc làm việc khác trên trang đó (sửa bài, cập nhật sản phẩm…).",
+  sections: [
+    { id: "open", title: "Mở trang quản trị và đăng nhập", steps: [
+      { title: "Mở khung Browser", body: "Trong Claude Desktop (tab Code, đúng cuộc trò chuyện đang dùng), bấm nút Browser trên thanh tiêu đề, hoặc Cmd+Shift+B trên Mac, Ctrl+Shift+B trên Windows." },
+      { title: "Vào trang quản trị", body: "Gõ địa chỉ trang quản trị website (ví dụ trang wp-admin, Haravan, Sapo hoặc trang công ty tự làm) và tự đăng nhập. Không gửi mật khẩu cho trợ lý." },
+      { title: "Báo trợ lý", body: "Nhắn trợ lý rằng bạn đang ở trang quản trị và muốn làm gì. Trợ lý tự tìm đúng tab đó." }
+    ], paragraphs: ["Lần đầu trợ lý thao tác trên trang này, Claude hỏi quyền: bấm Always allow. Trang chỉ mở được trong mạng công ty cũng có thẻ hỏi riêng, bấm Always allow."], prompt: "Tôi đang ở trang quản trị website trong khung Browser. Kiểm tra trợ lý thấy được trang này, chưa thay đổi gì." },
+    { id: "seo", title: "Viết và đăng bài chuẩn SEO", paragraphs: ["Trợ lý hỏi chủ đề và từ khóa (chưa có thì trợ lý đề xuất), xem website đã có bài nào giống chưa, rồi viết bài dựa trên thông tin doanh nghiệp. Bạn xem tiêu đề, mô tả, dàn ý và đoạn mở đầu ngay trong chat; bài đầy đủ lưu ở thư mục outputs/05_articles.", "Bạn chọn Đăng thì trợ lý mới điền bài vào trang quản trị (nội dung, đường dẫn, danh mục, ô SEO), bấm Đăng, rồi mở bài ngoài website để kiểm tra và gửi bạn đường dẫn. Ảnh: trợ lý chỉ dùng ảnh bạn đưa vào inputs hoặc ảnh đã có trên website."], prompt: "Viết một bài chuẩn SEO về <chủ đề> cho website. Cho tôi xem trước, tôi duyệt rồi mới đăng." },
+    { id: "other", title: "Việc khác trên trang quản trị", paragraphs: ["Nhắn trợ lý việc cần làm. Việc chỉ xem (thống kê, danh sách bài, kiểm tra SEO bài cũ) thì trợ lý làm luôn. Việc sửa thì trợ lý làm thử một mục cho bạn xem, bạn đồng ý mới làm tiếp.", "Trợ lý không tự xóa dữ liệu, không đổi cài đặt website, tài khoản, phân quyền hay thanh toán."], prompt: "Tôi đang ở trang quản trị. Liệt kê 10 bài viết gần nhất và chỉ ra bài nào thiếu mô tả SEO. Chưa sửa gì." },
+    { id: "faq", title: "Câu hỏi", faqs: [
+      { question: "Trợ lý báo không thấy trang quản trị?", answer: "Kiểm tra trang đang mở trong khung Browser của Claude (không phải Chrome hay Safari bên ngoài) và đã đăng nhập xong, rồi nhắn lại trợ lý." },
+      { question: "Bị đăng xuất giữa chừng?", answer: "Trợ lý dừng và nhờ bạn đăng nhập lại trong khung Browser. Bật Keep cookies trong menu ⋮ của khung Browser để đỡ phải đăng nhập lại." },
+      { question: "Trợ lý không tải được ảnh lên?", answer: "Chọn ảnh khi máy mở hộp thoại chọn tệp, hoặc tự tải ảnh lên thư viện ảnh của website rồi báo trợ lý tên ảnh." }
+    ] }
+  ]
+};
+
 export const help: Guide = {
   slug: "tro-giup", title: "Câu hỏi thường gặp", shortTitle: "Câu hỏi thường gặp", actor: "Bạn yêu cầu trợ lý",
   description: "Các vướng mắc hay gặp.",
@@ -166,6 +185,6 @@ export const phases: Phase[] = [
 ];
 export const phaseOf = (step: number) => phases.find((p) => step >= p.from && step <= p.to);
 
-export const guides: Guide[] = [...cycle, help];
+export const guides: Guide[] = [...cycle, adminSite, help];
 export const stepNumber = (slug: string) => cycle.findIndex((g) => g.slug === slug) + 1;
 export const guideHref = (slug: string) => `/huong-dan/${slug}`;
