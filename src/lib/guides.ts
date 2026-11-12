@@ -70,7 +70,7 @@ export const cycle: Guide[] = [
   },
   {
     slug: "ket-noi-mcp", title: "Trợ lý kết nối công cụ", shortTitle: "Trợ lý kết nối công cụ", actor: "Bạn yêu cầu trợ lý",
-    description: "Kiểm tra đọc web, kết nối TinaCRM (bằng API key) và các dịch vụ sẽ dùng như Gmail, Google Calendar, Apollo.",
+    description: "Kiểm tra đọc web, kết nối TinaCRM (bằng API key) và các dịch vụ sẽ dùng như Google Calendar, Apollo. Email gửi bằng Outlook trên máy, thiết lập ở bước 9.",
     sections: [
       { id: "browser", title: "Đọc web", paragraphs: ["Trợ lý dùng công cụ đọc web có sẵn, không cần cài trình duyệt riêng. Trợ lý đọc thử website của doanh nghiệp bạn ngay trong cuộc trò chuyện này. Khi được hỏi quyền đọc web hoặc chạy lệnh, bấm cho phép luôn.", "Khi tìm khách, cách nào không lấy được dữ liệu thì trợ lý tự chuyển sang cách khác."], prompt: "Đọc thử website của doanh nghiệp tôi để kiểm tra trợ lý đọc được web." },
       { id: "apikey-open", title: "TinaCRM: tạo API key", paragraphs: ["Mở app.tinacrm.com, đăng nhập và vào workspace của doanh nghiệp → Settings → MCP & APIs → tab API → Create API key."], link: { label: "Mở TinaCRM (app.tinacrm.com)", href: "https://app.tinacrm.com" } },
@@ -78,7 +78,7 @@ export const cycle: Guide[] = [
       { id: "apikey-copy", title: "Sao chép khóa", paragraphs: ["Khóa chỉ hiện một lần. Bấm Copy rồi gửi câu lệnh dưới đây. Không dán khóa vào khung chat."], prompt: "Kết nối TinaCRM tại https://app.tinacrm.com bằng API key. Bật hộp thoại để tôi dán API key, sau đó đọc thử dữ liệu khách hàng, chưa ghi gì." },
       { id: "apikey-paste", title: "Dán khóa vào hộp thoại", paragraphs: ["Trợ lý bật hộp thoại Kết nối TinaCRM: dán khóa vào ô, bấm Lưu. Không thấy hộp thoại thì tìm trên thanh Dock (Mac) hoặc thanh tác vụ (Windows), hoặc phía sau cửa sổ trợ lý AI."] },
       { id: "mcp-check", title: "Kiểm tra kết nối", paragraphs: ["Trợ lý kiểm tra khóa và đọc thử vài khách hàng, công ty để bạn xác nhận đúng CRM của doanh nghiệp. Không cần mở phiên mới."] },
-      { id: "connectors", title: "Dịch vụ khác", paragraphs: ["Trợ lý đề xuất dịch vụ doanh nghiệp sẽ cần: Gmail hoặc Outlook để gửi email, Google Calendar để đặt lịch hẹn, Apollo để tìm khách. Trợ lý đọc thử để kiểm tra, chưa gửi gì.", "Claude hiện thẻ như ảnh trong khung chat: bấm Connect, đăng nhập nếu được hỏi là xong. Phần mềm AI khác thì làm theo hướng dẫn trợ lý đưa ra.", "Kết nối xong thì tiếp tục ngay trong cuộc trò chuyện này. Đừng mở cuộc trò chuyện mới: cuộc trò chuyện mới không có các kết nối vừa làm và không nhớ những gì bạn đã trao đổi."], prompt: "Đề xuất các dịch vụ cần kết nối cho doanh nghiệp này và hướng dẫn tôi kết nối từng cái." },
+      { id: "connectors", title: "Dịch vụ khác", paragraphs: ["Trợ lý đề xuất dịch vụ doanh nghiệp sẽ cần: Google Calendar để đặt lịch hẹn, Apollo để tìm khách. Email không cần kết nối ở đây: trợ lý gửi bằng Outlook trên máy bạn (bước 9). Trợ lý đọc thử để kiểm tra, chưa gửi gì.", "Claude hiện thẻ như ảnh trong khung chat: bấm Connect, đăng nhập nếu được hỏi là xong. Phần mềm AI khác thì làm theo hướng dẫn trợ lý đưa ra.", "Kết nối xong thì tiếp tục ngay trong cuộc trò chuyện này. Đừng mở cuộc trò chuyện mới: cuộc trò chuyện mới không có các kết nối vừa làm và không nhớ những gì bạn đã trao đổi."], prompt: "Đề xuất các dịch vụ cần kết nối cho doanh nghiệp này và hướng dẫn tôi kết nối từng cái." },
     ]
   },
   {
@@ -100,9 +100,9 @@ export const cycle: Guide[] = [
   },
   {
     slug: "email", title: "Email chăm sóc", shortTitle: "Email chăm sóc", actor: "Bạn yêu cầu trợ lý",
-    description: "Kết nối hộp thư (cần quyền gửi và đọc), duyệt chuỗi email trước khi gửi thật.",
+    description: "Trợ lý gửi email bằng ứng dụng Outlook bản cũ (classic) trên máy bạn: không cần kết nối, không cần mật khẩu. Bạn duyệt chuỗi email trước khi gửi thật.",
     sections: [
-      { id: "mailbox", title: "Kết nối hộp thư", prompt: "Kết nối hộp thư để gửi email và đọc phản hồi của khách." },
+      { id: "mailbox", title: "Dùng Outlook trên máy", paragraphs: ["Mở ứng dụng Outlook trên máy, đăng nhập đúng hộp thư dùng để liên hệ khách. Gmail hay email công ty đều thêm được vào Outlook.", "Cần Outlook bản cũ: bản mới (New Outlook) không cho trợ lý gửi thư hộ. Mac: thanh menu Outlook → bỏ chọn New Outlook (bản mới hơn: Help → Legacy Outlook). Windows: gạt nút New Outlook ở góc trên bên phải về Off, hoặc mở Outlook (classic) từ Start.", "Máy hỏi cho phép điều khiển Microsoft Outlook thì bấm OK. Trợ lý gửi thử một thư cho chính bạn."], prompt: "Thiết lập gửi email bằng Outlook trên máy tôi và gửi thử một thư cho chính tôi." },
       { id: "sequence", title: "Chuỗi email", prompt: "Đề xuất chuỗi email chăm sóc: số email, khoảng cách gửi và email mẫu. Chưa gửi thật khi tôi chưa duyệt." },
       { id: "replies", title: "Xử lý phản hồi" }
     ]
@@ -139,6 +139,8 @@ export const help: Guide = {
       { question: "Hôm sau làm tiếp thế nào?", answer: "Mở Claude Desktop (tab Code), bấm vào đúng cuộc trò chuyện cũ trong danh sách ở thanh bên trái, rồi gửi “Tiếp tục chiến dịch <tên>” hoặc “Tiếp tục từ lần trước”. Đừng bấm + New: cuộc trò chuyện mới không có các kết nối đã làm và không nhớ ngữ cảnh." },
       { question: "Lỡ mở cuộc trò chuyện mới rồi?", answer: "Quay lại cuộc trò chuyện cũ ở thanh bên trái và làm tiếp ở đó. Nếu không tìm thấy, gửi “Tiếp tục từ lần trước” trong cuộc trò chuyện mới: trợ lý đọc lại tiến trình đã lưu trong thư mục, nhưng sẽ phải nhờ bạn kết nối lại các dịch vụ (Gmail, Calendar…)." },
       { question: "Trợ lý báo đã lưu nhưng TinaCRM không có?", answer: "Yêu cầu trợ lý kiểm tra lại bằng công cụ và báo ID bản ghi." },
+      { question: "Trợ lý báo Outlook đang ở bản mới?", answer: "Chuyển về Outlook bản cũ một lần. Mac: mở Outlook → thanh menu Outlook → bỏ chọn New Outlook (bản mới hơn: Help → Legacy Outlook). Windows: gạt nút New Outlook ở góc trên bên phải về Off hoặc mở Outlook (classic) từ Start; không có bản classic thì nhờ IT cài. Không chuyển được thì trợ lý mở sẵn thư đã soạn, bạn chỉ bấm Gửi." },
+      { question: "Lỡ bấm Không khi máy hỏi điều khiển Outlook?", answer: "Mac: System Settings → Privacy & Security → Automation → bật Microsoft Outlook cho Claude, rồi nhắn trợ lý thử lại." },
       { question: "Trợ lý không lấy được dữ liệu từ một trang web?", answer: "Bình thường: nhiều trang chặn đọc tự động hoặc cần đăng nhập. Trợ lý tự chuyển sang cách khác (nguồn dữ liệu doanh nghiệp, Apollo…). Nếu vẫn không được, bạn tự xuất danh sách ra Excel/CSV, bỏ vào thư mục inputs rồi nhắn trợ lý đọc tệp đó." },
       { question: "Bản cũ có CloakBrowser?", answer: "Workflow đã bỏ CloakBrowser. Nhắn “Cập nhật workflow”, trợ lý tự gỡ cấu hình cũ và hỏi bạn trước khi xóa thư mục trình duyệt cũ." },
       { question: "Lịch chạy không hoạt động?", answer: "Lịch chỉ chạy khi máy bật, không ngủ và phần mềm trợ lý AI đang mở. Máy ngủ qua giờ chạy thì lần chạy bị bỏ lỡ được chạy bù khi mở lại. Mở mục Scheduled ở thanh bên trái xem lần chạy gần nhất: nếu đang chờ hỏi quyền, mở ra và cho phép luôn đúng việc như mô tả." },
