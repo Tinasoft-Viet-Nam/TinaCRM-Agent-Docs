@@ -70,9 +70,9 @@ export const cycle: Guide[] = [
   },
   {
     slug: "ket-noi-mcp", title: "Trợ lý kết nối công cụ", shortTitle: "Trợ lý kết nối công cụ", actor: "Bạn yêu cầu trợ lý",
-    description: "Kiểm tra đọc web, kết nối TinaCRM (bằng API key) và các dịch vụ sẽ dùng như Google Calendar, Apollo. Email gửi bằng Outlook trên máy, thiết lập ở bước 9.",
+    description: "Thử trình duyệt có sẵn trong Claude, kết nối TinaCRM (bằng API key) và các dịch vụ sẽ dùng như Google Calendar, Apollo. Email gửi bằng Outlook trên máy, thiết lập ở bước 9.",
     sections: [
-      { id: "browser", title: "Đọc web", paragraphs: ["Trợ lý dùng công cụ đọc web có sẵn, không cần cài trình duyệt riêng. Trợ lý đọc thử website của doanh nghiệp bạn ngay trong cuộc trò chuyện này. Khi được hỏi quyền đọc web hoặc chạy lệnh, bấm cho phép luôn.", "Khi tìm khách, cách nào không lấy được dữ liệu thì trợ lý tự chuyển sang cách khác."], prompt: "Đọc thử website của doanh nghiệp tôi để kiểm tra trợ lý đọc được web." },
+      { id: "browser", title: "Trình duyệt", paragraphs: ["Claude có sẵn trình duyệt ngay trong ứng dụng (khung Browser cạnh khung chat), không cần cài gì. Khi tìm khách, trợ lý tự mở trang, cuộn, bấm và lấy dữ liệu; bạn nhìn thấy trợ lý làm gì trong khung này.", "Lần đầu trợ lý thao tác trên một trang, Claude hỏi quyền: bấm Always allow. Trong khung Browser, bấm ⋮ rồi bật Keep cookies để không phải đăng nhập lại.", "Không thấy khung Browser: vào Settings → Code, bật Browser tools. Công ty bạn tắt tính năng này thì trợ lý tự dùng cách khác."], prompt: "Mở website của doanh nghiệp tôi trong trình duyệt của Claude để thử." },
       { id: "apikey-open", title: "TinaCRM: tạo API key", paragraphs: ["Mở app.tinacrm.com, đăng nhập và vào workspace của doanh nghiệp → Settings → MCP & APIs → tab API → Create API key."], link: { label: "Mở TinaCRM (app.tinacrm.com)", href: "https://app.tinacrm.com" } },
       { id: "apikey-form", title: "Điền thông tin khóa", paragraphs: ["Role quyết định trợ lý được làm gì trong CRM: chọn role đủ quyền với khách hàng, công ty và công việc. Nên đặt ngày hết hạn thay vì Never."] },
       { id: "apikey-copy", title: "Sao chép khóa", paragraphs: ["Khóa chỉ hiện một lần. Bấm Copy rồi gửi câu lệnh dưới đây. Không dán khóa vào khung chat."], prompt: "Kết nối TinaCRM tại https://app.tinacrm.com bằng API key. Bật hộp thoại để tôi dán API key, sau đó đọc thử dữ liệu khách hàng, chưa ghi gì." },
@@ -94,7 +94,7 @@ export const cycle: Guide[] = [
     description: "Bắt đầu bằng danh sách nhỏ. Trợ lý tự chọn cách lấy dữ liệu; nguồn nào cần đăng nhập thì bạn tự đăng nhập, hoặc tự xuất danh sách (Excel/CSV) vào thư mục inputs.",
     sections: [
       { id: "source", title: "Chọn nguồn", paragraphs: ["Trợ lý đề xuất 2–3 nguồn hợp với nhóm khách của chiến dịch (ví dụ Google Maps, danh bạ doanh nghiệp, LinkedIn) kèm lý do. Bạn chọn số."], prompt: "Đề xuất nguồn tìm khách phù hợp nhất cho chiến dịch này." },
-      { id: "find", title: "Tìm danh sách", prompt: "Tìm 10 khách theo ICP của chiến dịch, kèm lý do phù hợp và nguồn." },
+      { id: "find", title: "Tìm danh sách", paragraphs: ["Trợ lý mở nguồn trong khung Browser, cuộn và bấm để lấy danh sách, lưu dần ra tệp. Trang cần đăng nhập thì bạn tự đăng nhập ngay trong khung Browser rồi báo trợ lý."], prompt: "Tìm 10 khách theo ICP của chiến dịch, kèm lý do phù hợp và nguồn." },
       { id: "save", title: "Lưu TinaCRM", prompt: "Kiểm tra trùng (cả với chiến dịch khác) và lưu danh sách đã duyệt vào TinaCRM. Báo số tạo mới, cập nhật, bỏ qua và lỗi." }
     ]
   },
@@ -141,7 +141,7 @@ export const help: Guide = {
       { question: "Trợ lý báo đã lưu nhưng TinaCRM không có?", answer: "Yêu cầu trợ lý kiểm tra lại bằng công cụ và báo ID bản ghi." },
       { question: "Trợ lý báo Outlook đang ở bản mới?", answer: "Chuyển về Outlook bản cũ một lần. Mac: mở Outlook → thanh menu Outlook → bỏ chọn New Outlook (bản mới hơn: Help → Legacy Outlook). Windows: gạt nút New Outlook ở góc trên bên phải về Off hoặc mở Outlook (classic) từ Start; không có bản classic thì nhờ IT cài. Không chuyển được thì trợ lý mở sẵn thư đã soạn, bạn chỉ bấm Gửi." },
       { question: "Lỡ bấm Không khi máy hỏi điều khiển Outlook?", answer: "Mac: System Settings → Privacy & Security → Automation → bật Microsoft Outlook cho Claude, rồi nhắn trợ lý thử lại." },
-      { question: "Trợ lý không lấy được dữ liệu từ một trang web?", answer: "Bình thường: nhiều trang chặn đọc tự động hoặc cần đăng nhập. Trợ lý tự chuyển sang cách khác (nguồn dữ liệu doanh nghiệp, Apollo…). Nếu vẫn không được, bạn tự xuất danh sách ra Excel/CSV, bỏ vào thư mục inputs rồi nhắn trợ lý đọc tệp đó." },
+      { question: "Trợ lý không lấy được dữ liệu từ một trang web?", answer: "Bình thường: nhiều trang chặn đọc tự động, hiện CAPTCHA hoặc cần đăng nhập. Trang cần đăng nhập thì bạn đăng nhập trong khung Browser của Claude. Còn lại trợ lý tự chuyển sang cách khác (nguồn dữ liệu doanh nghiệp, Apollo…). Nếu vẫn không được, bạn tự xuất danh sách ra Excel/CSV, bỏ vào thư mục inputs rồi nhắn trợ lý đọc tệp đó." },
       { question: "Bản cũ có CloakBrowser?", answer: "Workflow đã bỏ CloakBrowser. Nhắn “Cập nhật workflow”, trợ lý tự gỡ cấu hình cũ và hỏi bạn trước khi xóa thư mục trình duyệt cũ." },
       { question: "Lịch chạy không hoạt động?", answer: "Lịch chỉ chạy khi máy bật, không ngủ và phần mềm trợ lý AI đang mở. Máy ngủ qua giờ chạy thì lần chạy bị bỏ lỡ được chạy bù khi mở lại. Mở mục Scheduled ở thanh bên trái xem lần chạy gần nhất: nếu đang chờ hỏi quyền, mở ra và cho phép luôn đúng việc như mô tả." },
       { question: "Đổi giờ, tạm dừng hoặc xem lịch?", answer: "Nhắn trợ lý, ví dụ “Xem các lịch đang chạy”, “Tạm dừng lịch chiến dịch <tên>”, “Đổi giờ chạy chiến dịch <tên> sang 9:00”." },
